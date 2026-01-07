@@ -1,0 +1,11 @@
+.env
+.docker/
+__pycache__/
+*.pyc
+
+# Local sources
+/dolibarr/
+/custom-modules/
+
+# Dashboard runtime
+/dashboard/__pycache__/

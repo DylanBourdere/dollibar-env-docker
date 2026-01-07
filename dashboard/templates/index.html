@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dolibarr Dev Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <h1>Dolibarr Dev Dashboard</h1>
+        <p>Suivi des environnements Dolibarr 16 → 22.</p>
+      </header>
+
+      <section class="cards">
+        {% for instance in instances %}
+        <article class="card card--{{ instance.status | lower }}">
+          <div class="card__header">
+            <h2>{{ instance.name }}</h2>
+            <span class="badge">v{{ instance.version }}</span>
+          </div>
+          <dl class="card__meta">
+            <div>
+              <dt>Statut</dt>
+              <dd>{{ instance.status }}</dd>
+            </div>
+            <div>
+              <dt>HTTP</dt>
+              <dd>{{ instance.http_status }}</dd>
+            </div>
+            <div>
+              <dt>Latence</dt>
+              <dd>{{ instance.latency_ms }} ms</dd>
+            </div>
+          </dl>
+          <a class="card__link" href="{{ instance.url }}" target="_blank" rel="noreferrer">
+            Ouvrir Dolibarr
+          </a>
+        </article>
+        {% endfor %}
+      </section>
+    </main>
+  </body>
+</html>
