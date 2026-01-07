@@ -40,7 +40,7 @@ docker compose up -d
 
 ## Développement core + modules customs
 
-- **Core Dolibarr** : chaque version est montée depuis `./dolibarr/<version>` dans `/var/www/html`.
+- **Core Dolibarr** : chaque version est montée depuis `./dolibarr/<version>/htdocs` dans `/var/www/html`.
 - **Modules customs** : placez vos modules dans `./custom-modules` (monté sur `/var/www/html/custom`).
 
 Les modifications sont visibles en direct dans les conteneurs.

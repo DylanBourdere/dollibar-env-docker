@@ -34,7 +34,7 @@ services:
       DOLI_DB_NAME: dolibarr16
       DOLI_URL_ROOT: http://localhost:8016
     volumes:
-      - ./dolibarr/16:/var/www/html
+      - ./dolibarr/16/htdocs:/var/www/html
       - ./custom-modules:/var/www/html/custom
 
   db16:
@@ -62,7 +62,7 @@ services:
       DOLI_DB_NAME: dolibarr17
       DOLI_URL_ROOT: http://localhost:8017
     volumes:
-      - ./dolibarr/17:/var/www/html
+      - ./dolibarr/17/htdocs:/var/www/html
       - ./custom-modules:/var/www/html/custom
 
   db17:
@@ -90,7 +90,7 @@ services:
       DOLI_DB_NAME: dolibarr18
       DOLI_URL_ROOT: http://localhost:8018
     volumes:
-      - ./dolibarr/18:/var/www/html
+      - ./dolibarr/18/htdocs:/var/www/html
       - ./custom-modules:/var/www/html/custom
 
   db18:
@@ -118,7 +118,7 @@ services:
       DOLI_DB_NAME: dolibarr19
       DOLI_URL_ROOT: http://localhost:8019
     volumes:
-      - ./dolibarr/19:/var/www/html
+      - ./dolibarr/19/htdocs:/var/www/html
       - ./custom-modules:/var/www/html/custom
 
   db19:
@@ -146,7 +146,7 @@ services:
       DOLI_DB_NAME: dolibarr20
       DOLI_URL_ROOT: http://localhost:8020
     volumes:
-      - ./dolibarr/20:/var/www/html
+      - ./dolibarr/20/htdocs:/var/www/html
       - ./custom-modules:/var/www/html/custom
 
   db20:
@@ -174,7 +174,7 @@ services:
       DOLI_DB_NAME: dolibarr21
       DOLI_URL_ROOT: http://localhost:8021
     volumes:
-      - ./dolibarr/21:/var/www/html
+      - ./dolibarr/21/htdocs:/var/www/html
       - ./custom-modules:/var/www/html/custom
 
   db21:
@@ -202,7 +202,7 @@ services:
       DOLI_DB_NAME: dolibarr22
       DOLI_URL_ROOT: http://localhost:8022
     volumes:
-      - ./dolibarr/22:/var/www/html
+      - ./dolibarr/22/htdocs:/var/www/html
       - ./custom-modules:/var/www/html/custom
 
   db22:
