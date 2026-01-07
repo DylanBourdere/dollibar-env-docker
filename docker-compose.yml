@@ -1,0 +1,226 @@
+version: "3.9"
+
+services:
+  dashboard:
+    build:
+      context: ./dashboard
+    container_name: dolibarr-dashboard
+    ports:
+      - "8080:8080"
+    environment:
+      DASHBOARD_CONFIG: /config/instances.yml
+    volumes:
+      - ./dashboard/config/instances.yml:/config/instances.yml:ro
+    depends_on:
+      - dolibarr16
+      - dolibarr17
+      - dolibarr18
+      - dolibarr19
+      - dolibarr20
+      - dolibarr21
+      - dolibarr22
+
+  dolibarr16:
+    image: dolibarr/dolibarr:16
+    container_name: dolibarr16
+    depends_on:
+      - db16
+    ports:
+      - "8016:80"
+    environment:
+      DOLI_DB_HOST: db16
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: ${DOLI_DB_PASSWORD}
+      DOLI_DB_NAME: dolibarr16
+      DOLI_URL_ROOT: http://localhost:8016
+    volumes:
+      - ./dolibarr/16:/var/www/html
+      - ./custom-modules:/var/www/html/custom
+
+  db16:
+    image: mariadb:10.6
+    container_name: dolibarr16-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: dolibarr16
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: ${DOLI_DB_PASSWORD}
+    volumes:
+      - db16-data:/var/lib/mysql
+
+  dolibarr17:
+    image: dolibarr/dolibarr:17
+    container_name: dolibarr17
+    depends_on:
+      - db17
+    ports:
+      - "8017:80"
+    environment:
+      DOLI_DB_HOST: db17
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: ${DOLI_DB_PASSWORD}
+      DOLI_DB_NAME: dolibarr17
+      DOLI_URL_ROOT: http://localhost:8017
+    volumes:
+      - ./dolibarr/17:/var/www/html
+      - ./custom-modules:/var/www/html/custom
+
+  db17:
+    image: mariadb:10.6
+    container_name: dolibarr17-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: dolibarr17
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: ${DOLI_DB_PASSWORD}
+    volumes:
+      - db17-data:/var/lib/mysql
+
+  dolibarr18:
+    image: dolibarr/dolibarr:18
+    container_name: dolibarr18
+    depends_on:
+      - db18
+    ports:
+      - "8018:80"
+    environment:
+      DOLI_DB_HOST: db18
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: ${DOLI_DB_PASSWORD}
+      DOLI_DB_NAME: dolibarr18
+      DOLI_URL_ROOT: http://localhost:8018
+    volumes:
+      - ./dolibarr/18:/var/www/html
+      - ./custom-modules:/var/www/html/custom
+
+  db18:
+    image: mariadb:10.6
+    container_name: dolibarr18-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: dolibarr18
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: ${DOLI_DB_PASSWORD}
+    volumes:
+      - db18-data:/var/lib/mysql
+
+  dolibarr19:
+    image: dolibarr/dolibarr:19
+    container_name: dolibarr19
+    depends_on:
+      - db19
+    ports:
+      - "8019:80"
+    environment:
+      DOLI_DB_HOST: db19
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: ${DOLI_DB_PASSWORD}
+      DOLI_DB_NAME: dolibarr19
+      DOLI_URL_ROOT: http://localhost:8019
+    volumes:
+      - ./dolibarr/19:/var/www/html
+      - ./custom-modules:/var/www/html/custom
+
+  db19:
+    image: mariadb:10.6
+    container_name: dolibarr19-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: dolibarr19
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: ${DOLI_DB_PASSWORD}
+    volumes:
+      - db19-data:/var/lib/mysql
+
+  dolibarr20:
+    image: dolibarr/dolibarr:20
+    container_name: dolibarr20
+    depends_on:
+      - db20
+    ports:
+      - "8020:80"
+    environment:
+      DOLI_DB_HOST: db20
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: ${DOLI_DB_PASSWORD}
+      DOLI_DB_NAME: dolibarr20
+      DOLI_URL_ROOT: http://localhost:8020
+    volumes:
+      - ./dolibarr/20:/var/www/html
+      - ./custom-modules:/var/www/html/custom
+
+  db20:
+    image: mariadb:10.6
+    container_name: dolibarr20-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: dolibarr20
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: ${DOLI_DB_PASSWORD}
+    volumes:
+      - db20-data:/var/lib/mysql
+
+  dolibarr21:
+    image: dolibarr/dolibarr:21
+    container_name: dolibarr21
+    depends_on:
+      - db21
+    ports:
+      - "8021:80"
+    environment:
+      DOLI_DB_HOST: db21
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: ${DOLI_DB_PASSWORD}
+      DOLI_DB_NAME: dolibarr21
+      DOLI_URL_ROOT: http://localhost:8021
+    volumes:
+      - ./dolibarr/21:/var/www/html
+      - ./custom-modules:/var/www/html/custom
+
+  db21:
+    image: mariadb:10.6
+    container_name: dolibarr21-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: dolibarr21
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: ${DOLI_DB_PASSWORD}
+    volumes:
+      - db21-data:/var/lib/mysql
+
+  dolibarr22:
+    image: dolibarr/dolibarr:22
+    container_name: dolibarr22
+    depends_on:
+      - db22
+    ports:
+      - "8022:80"
+    environment:
+      DOLI_DB_HOST: db22
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: ${DOLI_DB_PASSWORD}
+      DOLI_DB_NAME: dolibarr22
+      DOLI_URL_ROOT: http://localhost:8022
+    volumes:
+      - ./dolibarr/22:/var/www/html
+      - ./custom-modules:/var/www/html/custom
+
+  db22:
+    image: mariadb:10.6
+    container_name: dolibarr22-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: dolibarr22
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: ${DOLI_DB_PASSWORD}
+    volumes:
+      - db22-data:/var/lib/mysql
+
+volumes:
+  db16-data:
+  db17-data:
+  db18-data:
+  db19-data:
+  db20-data:
+  db21-data:
+  db22-data:
