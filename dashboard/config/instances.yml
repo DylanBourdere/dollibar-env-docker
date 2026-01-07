@@ -1,22 +1,22 @@
 instances:
   - name: Dolibarr 16
     version: "16"
-    url: http://dolibarr16/
+    url: http://127.0.0.1:8016/
   - name: Dolibarr 17
     version: "17"
-    url: http://dolibarr17/
+    url: http://127.0.0.1:8017/
   - name: Dolibarr 18
     version: "18"
-    url: http://dolibarr18/
+    url: http://127.0.0.1:8018/
   - name: Dolibarr 19
     version: "19"
-    url: http://dolibarr19/
+    url: http://127.0.0.1:8019/
   - name: Dolibarr 20
     version: "20"
-    url: http://dolibarr20/
+    url: http://127.0.0.1:8020/
   - name: Dolibarr 21
     version: "21"
-    url: http://dolibarr21/
+    url: http://127.0.0.1:8021/
   - name: Dolibarr 22
     version: "22"
-    url: http://dolibarr22/
+    url: http://127.0.0.1:8022/

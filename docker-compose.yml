@@ -35,7 +35,6 @@ services:
       DOLI_URL_ROOT: http://localhost:8016
     volumes:
       - ./dolibarr/16/htdocs:/var/www/html
-      - ./custom-modules:/var/www/html/custom
 
   db16:
     image: mariadb:10.6
@@ -63,7 +62,6 @@ services:
       DOLI_URL_ROOT: http://localhost:8017
     volumes:
       - ./dolibarr/17/htdocs:/var/www/html
-      - ./custom-modules:/var/www/html/custom
 
   db17:
     image: mariadb:10.6
@@ -91,7 +89,6 @@ services:
       DOLI_URL_ROOT: http://localhost:8018
     volumes:
       - ./dolibarr/18/htdocs:/var/www/html
-      - ./custom-modules:/var/www/html/custom
 
   db18:
     image: mariadb:10.6
@@ -119,7 +116,6 @@ services:
       DOLI_URL_ROOT: http://localhost:8019
     volumes:
       - ./dolibarr/19/htdocs:/var/www/html
-      - ./custom-modules:/var/www/html/custom
 
   db19:
     image: mariadb:10.6
@@ -147,7 +143,6 @@ services:
       DOLI_URL_ROOT: http://localhost:8020
     volumes:
       - ./dolibarr/20/htdocs:/var/www/html
-      - ./custom-modules:/var/www/html/custom
 
   db20:
     image: mariadb:10.6
@@ -175,7 +170,6 @@ services:
       DOLI_URL_ROOT: http://localhost:8021
     volumes:
       - ./dolibarr/21/htdocs:/var/www/html
-      - ./custom-modules:/var/www/html/custom
 
   db21:
     image: mariadb:10.6
@@ -203,7 +197,6 @@ services:
       DOLI_URL_ROOT: http://localhost:8022
     volumes:
       - ./dolibarr/22/htdocs:/var/www/html
-      - ./custom-modules:/var/www/html/custom
 
   db22:
     image: mariadb:10.6
